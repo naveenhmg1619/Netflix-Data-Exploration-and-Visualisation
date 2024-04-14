@@ -8,6 +8,13 @@ Netflix is a leading media streaming service offering a vast library of movies a
 
 The goal of this project is to analyze Netflix's extensive dataset to uncover insights that could guide the company's content strategy and expansion plans across different markets.
 
+## Skills Utilized
+- Data Cleaning
+- Exploratory Data Analysis
+- Pandas, NumPy, Matplotlib, Seaborn
+- Data Visualization
+- Python Programming
+
 ## Dataset
 
 The dataset includes details such as cast, directors, ratings, release year, and duration for all titles available on Netflix.
@@ -36,6 +43,39 @@ The dataset includes details such as cast, directors, ratings, release year, and
 - Analyze the impact of actors and directors on content success.
 - Assess Netflix's focus shift between TV shows and movies.
 - Understand regional content availability.
+
+## Problems and Solutions
+
+### 1. Inconsistent Data Types
+- **Problem:** 'date_added' column was not in datetime format, and 'duration' had mixed formats.
+- **Solution:** Converted 'date_added' to datetime and standardized 'duration' to minutes.
+- **Method:** Used `pd.to_datetime()` and a custom function `convert_duration_to_min()`.
+
+### 2. Missing Values
+- **Problem:** Rows with missing 'date_added', 'rating', and 'duration' values.
+- **Solution:** Dropped rows with missing values.
+- **Method:** Applied `data.dropna(subset=[column_name], inplace=True)`.
+
+### 3. Incorrect Data Entries
+- **Problem:** 'rating' entries mistakenly entered as durations in minutes.
+- **Solution:** Removed incorrect 'rating' entries.
+- **Method:** Utilized `data.drop(data[data['rating'].isin([incorrect_values])].index, inplace=True)`.
+
+### 4. Mixed Data Formats
+- **Problem:** Multi-valued columns like 'genre', 'director', 'cast', and 'country' had mixed formats.
+- **Solution:** Split and exploded these columns into individual rows.
+- **Method:** Employed `str.split()` and `explode()`.
+
+### 5. Redundant Columns
+- **Problem:** Unnecessary columns present in the dataset.
+- **Solution:** Dropped unwanted columns to streamline the dataset.
+- **Method:** Used `data.drop(columns=[list_of_columns], inplace=True)`.
+
+## Visualization Summary
+
+- **Data Visualization:** Utilized Matplotlib and Seaborn libraries to create a variety of charts and graphs that illustrate the distribution and counts of various categories within the Netflix dataset. This included bar charts, pie charts, histograms and Scatter plots to effectively communicate the insights derived from the data.
+
+For detailed visual examples, please refer to the Jupyter notebooks in this repository.
 
 # Recommendations for Netflix Content Strategy
 
