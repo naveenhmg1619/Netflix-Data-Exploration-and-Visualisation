@@ -75,7 +75,7 @@ The dataset includes details such as cast, directors, ratings, release year, and
 
 - **Data Visualization:** Utilized Matplotlib and Seaborn libraries to create a variety of charts and graphs that illustrate the distribution and counts of various categories within the Netflix dataset. This included bar charts, pie charts, histograms and Scatter plots to effectively communicate the insights derived from the data.
 
-For detailed visual examples, please refer to the Jupyter notebooks in this repository.
+**For detailed visual examples, please refer to the Jupyter notebooks in this repository.**
 
 # Recommendations for Netflix Content Strategy
 
